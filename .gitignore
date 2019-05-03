@@ -1,0 +1,6 @@
+book-output
+book-release*
+
+### OSX ###
+*.DS_Store
+._*
