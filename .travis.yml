@@ -1,0 +1,37 @@
+language: ruby
+sudo: required
+
+services:
+  - docker
+
+env:
+  global:
+    - COMPOSE_FILE=docker-compose.yml
+    - secure: ojoixSpcynJiCdew7jvNOfCvEEip9F21QzovapQHgCFdQr+GJX16xPfrad7GrRqrq6o9xuzpQKMudYlAsh7bCauOjK9isE89r1TNz+dre2AonLp3Ble6DkW3eYvhJ9a7p/iRRqV5Ahu28/ivyMZ36vD5I5aHfYUwW7T5lk4p5F2tQDX44bMFGbi3ff3er6yDKvFQBgZMUPoBDLwyePqkXduwo25ncf6x/S0vRmecwx/tJDaY54OPwc8nbMuMF0NOah5q4+pl6oNENjpx9kKsOMJUYhDRvzQuPzo4rmogHoRQNPdBmcy1pjDPVMfAbcYhR08bnKbLgZW9nEE9Ob4CY8mETw8PtPQtURRR3jsYqKS+DUPMLSIMskhf8xlpxnOwVhalyIqChL//M5HmVfUeIxTgnSahge8MeU+uvN2quIOc/iHwdOHtz/KJSQg2jiBAlaKBwpySv4/SQB3M5SyrRrEvXZM95UeEdbogWWPOlD4CGH1Hy8OP2zi403omSP7zddVIihSCqo00nqT8UAb5Yo3FtM6ZISJZ7j0+QbGV0Bsm8KtRw5wNZCCIokVrLorXyUdBgfa3BLnRHgV8vo+JUFJ89nCPAySMgP3EEo66kPTCdZffthn8zM8R5OU+Qc5Za4m67y+/Q+jPXcaIwic0nOunmhTJst7iDpUq14Dzzlw=
+
+script:
+  - ls -lah
+  - docker-compose run --rm ebook
+  - docker-compose run --rm npm-install
+
+deploy:
+  - provider: script
+    api_key: "$GITHUB_TOKEN"
+    skip_cleanup: true
+    script: docker-compose run --rm semantic-release
+    on:
+      branch: master
+  - provider: releases
+    api_key: "$GITHUB_TOKEN"
+    file_glob: true
+    file: book-release/*
+    skip_cleanup: true
+    on:
+      tags: true
+
+notifications:
+  email:
+    recipients:
+      - rcmoutinho@cyborgdeveloper.tech
+    on_success: change
+    on_failure: always

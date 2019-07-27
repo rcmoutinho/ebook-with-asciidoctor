@@ -4,3 +4,10 @@ book-release*
 ### OSX ###
 *.DS_Store
 ._*
+
+### NODE.JS ###
+node_modules*
+npm-debug.log
+
+# ignores local travis config folder
+.travis

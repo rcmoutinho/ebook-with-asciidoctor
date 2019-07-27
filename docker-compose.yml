@@ -7,3 +7,30 @@ services:
       - .:/documents/
     command: scripts/docker-startup.sh
     network_mode: bridge
+  
+  travis:
+    build:
+      context: .
+      dockerfile: ./docker/travis/Dockerfile
+    volumes:
+      - .:/project/
+      - ./.travis:/root/.travis
+    network_mode: bridge
+  
+  npm-install:
+    image: node:lts-alpine
+    user: node
+    working_dir: /home/node/app
+    volumes:
+      - .:/home/node/app
+    command: npm i
+    network_mode: bridge
+  
+  semantic-release:
+    image: node:lts-alpine
+    user: node
+    working_dir: /home/node/app
+    volumes:
+      - .:/home/node/app
+    command: npx semantic-release
+    network_mode: bridge

@@ -1,0 +1,60 @@
+{
+  "author": "Rodrigo Moutinho",
+  "name": "ebook-with-asciidoctor",
+  "description": "Free and Open Source code to automate your ebook! Get your .pdf, .epub, and .mobi in seconds running a single command! Clone this project and start your eBook today!",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rcmoutinho/ebook-with-asciidoctor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rcmoutinho/ebook-with-asciidoctor/issues"
+  },
+  "homepage": "https://github.com/rcmoutinho/ebook-with-asciidoctor",
+  "keywords": [
+    "eBook",
+    "asciidoctor",
+    "asciidoc",
+    "pdf",
+    "epub",
+    "mobi",
+    "open source",
+    "automated"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/prompt": "^8.0.0",
+    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/commit-analyzer": "^6.2.0",
+    "@semantic-release/git": "^7.0.16",
+    "@semantic-release/github": "^5.4.2",
+    "@semantic-release/release-notes-generator": "^7.2.1",
+    "commitizen": "^3.1.1",
+    "git-cz": "^3.0.1",
+    "husky": "^2.7.0",
+    "semantic-release": "^15.13.18",
+    "semantic-release-cli": "^5.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "scripts": {
+    "commit": "./node_modules/.bin/git-cz",
+    "semantic-release": "./node_modules/.bin/semantic-release",
+    "semantic-release-cli": "./node_modules/.bin/semantic-release-cli"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/prompt"
+    }
+  }
+}
