@@ -10,7 +10,7 @@ logs=$output_folder/ebook.log
 
 # you can also personalize your ebook version, if your want
 # or remove this parameter if it is to much for you ;)
-version=0.1.0
+version=${1:-development}
 
 revdate=$(date '+%Y-%m-%d')
 params="--attribute revnumber=$version --attribute revdate=$revdate -D $release_folder"
