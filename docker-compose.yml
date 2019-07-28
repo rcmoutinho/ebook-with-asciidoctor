@@ -17,7 +17,7 @@ services:
       - ./.travis:/root/.travis
     network_mode: bridge
   
-  npm:
+  node:
     build:
       context: .
       dockerfile: ./docker/node/Dockerfile

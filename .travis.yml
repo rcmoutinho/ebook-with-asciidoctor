@@ -12,13 +12,13 @@ env:
 script:
   - ls -lah
   - docker-compose run --rm ebook
-  - docker-compose run --rm npm i
+  - docker-compose run --rm node npm i
 
 deploy:
   - provider: script
     api_key: "$GITHUB_TOKEN"
     skip_cleanup: true
-    script: docker-compose run --rm npm run semantic-release
+    script: docker-compose run --rm node npx semantic-release
     on:
       branch: master
   - provider: releases
