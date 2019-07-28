@@ -1,5 +1,5 @@
 module.exports = {
-    "disableEmoji": true,
+    "disableEmoji": false,
     "list": [
         "test",
         "feat",
