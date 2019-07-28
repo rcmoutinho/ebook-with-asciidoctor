@@ -15,8 +15,7 @@ jobs:
       - linux
       install:
       - npm install
-      script:
-      - echo "default npm test ignored"
+      script: skip
       deploy:
         provider: script
         api_key: "$GITHUB_TOKEN"
@@ -26,8 +25,8 @@ jobs:
         on:
           branch: master
     
-    - stage: "eBook Generation"
-      name: "Generates the ebook following the new release if it's applied"
+    - stage: "GitHub Release"
+      name: "Send the generated files to the new GitHub release"
       services:
       - docker
       env:
@@ -35,11 +34,8 @@ jobs:
       script:
       - ls -lah
       - git describe --tags --abbrev=0
+      - git describe --tags `git rev-list --tags --max-count=1`
       - docker-compose run --rm ebook
-    
-    - stage: "GitHub Release"
-      name: "Send the generated files to the new GitHub release"
-      script: skip
       deploy:
         provider: releases
         api_key: "$GITHUB_TOKEN"
@@ -49,7 +45,7 @@ jobs:
         - "book-release/automated-ebook.pdf"
         skip_cleanup: true
         on:
-          tags: true
+          branch: master
 
 notifications:
   email:
