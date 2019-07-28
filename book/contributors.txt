@@ -1,0 +1,2 @@
+Rodrigo Moutinho
+semantic-release-bot

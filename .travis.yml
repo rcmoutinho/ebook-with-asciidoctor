@@ -33,6 +33,7 @@ jobs:
       - COMPOSE_FILE=docker-compose.yml
       script:
       - TRAVIS_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+      - git shortlog -s | cut -f 2- > book/contributors.txt
       - docker-compose run --rm ebook $TRAVIS_TAG
       deploy:
         provider: releases
