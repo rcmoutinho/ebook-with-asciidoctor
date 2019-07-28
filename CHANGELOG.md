@@ -1,3 +1,16 @@
+# [0.4.0](https://github.com/rcmoutinho/ebook-with-asciidoctor/compare/v0.3.0...v0.4.0) (2019-07-28)
+
+
+### Bug Fixes
+
+* travis version to match the previous stage generated tag ([2aa7cc0](https://github.com/rcmoutinho/ebook-with-asciidoctor/commit/2aa7cc0))
+
+
+### Features
+
+* define book version by parameter ([a6f141d](https://github.com/rcmoutinho/ebook-with-asciidoctor/commit/a6f141d))
+* drop node.js docker configuration ([c4f1934](https://github.com/rcmoutinho/ebook-with-asciidoctor/commit/c4f1934))
+
 # [0.3.0](https://github.com/rcmoutinho/ebook-with-asciidoctor/compare/v0.2.0...v0.3.0) (2019-07-28)
 
 
