@@ -45,9 +45,9 @@ jobs:
         on:
           branch: master
 
-notifications:
-  email:
-    recipients:
-    - rcmoutinho@cyborgdeveloper.tech
-    on_success: change
-    on_failure: always
+# notifications:
+#   email:
+#     recipients:
+#     - my@email.com
+#     on_success: change
+#     on_failure: always
