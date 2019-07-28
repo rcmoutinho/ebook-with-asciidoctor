@@ -16,11 +16,3 @@ services:
       - .:/app
       - ./.travis:/root/.travis
     network_mode: bridge
-  
-  npm:
-    build:
-      context: .
-      dockerfile: ./docker/node/Dockerfile
-    volumes:
-      - .:/app
-    network_mode: bridge
