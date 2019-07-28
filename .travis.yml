@@ -32,10 +32,8 @@ jobs:
       env:
       - COMPOSE_FILE=docker-compose.yml
       script:
-      - ls -lah
-      - git describe --tags --abbrev=0
-      - git describe --tags `git rev-list --tags --max-count=1`
-      - docker-compose run --rm ebook
+      - TRAVIS_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+      - docker-compose run --rm ebook $TRAVIS_TAG
       deploy:
         provider: releases
         api_key: "$GITHUB_TOKEN"

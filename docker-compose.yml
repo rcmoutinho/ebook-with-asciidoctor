@@ -5,7 +5,7 @@ services:
     image: asciidoctor/docker-asciidoctor
     volumes:
       - .:/documents/
-    command: scripts/docker-startup.sh
+    entrypoint: scripts/docker-startup.sh
     network_mode: bridge
   
   travis:
@@ -15,12 +15,4 @@ services:
     volumes:
       - .:/app
       - ./.travis:/root/.travis
-    network_mode: bridge
-  
-  npm:
-    build:
-      context: .
-      dockerfile: ./docker/node/Dockerfile
-    volumes:
-      - .:/app
     network_mode: bridge
