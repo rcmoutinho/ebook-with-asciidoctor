@@ -39,10 +39,8 @@ jobs:
       deploy:
         provider: releases
         api_key: "$GITHUB_TOKEN"
-        file:
-        - "book-release/automated-ebook.epub"
-        - "book-release/automated-ebook.mobi"
-        - "book-release/automated-ebook.pdf"
+        file_glob: true
+        file: book-release/*
         skip_cleanup: true
         on:
           branch: master
