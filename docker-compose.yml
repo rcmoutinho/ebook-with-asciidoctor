@@ -13,22 +13,14 @@ services:
       context: .
       dockerfile: ./docker/travis/Dockerfile
     volumes:
-      - .:/project/
+      - .:/app
       - ./.travis:/root/.travis
     network_mode: bridge
   
-  npm-install:
-    image: node:lts-alpine
-    working_dir: /usr/app
+  npm:
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
     volumes:
-      - .:/usr/app
-    command: npm i
-    network_mode: bridge
-  
-  semantic-release:
-    image: node:lts-alpine
-    working_dir: /usr/app
-    volumes:
-      - .:/usr/app
-    command: npx semantic-release
+      - .:/app
     network_mode: bridge
