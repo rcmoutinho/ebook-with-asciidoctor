@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/rcmoutinho/ebook-with-asciidoctor/compare/v0.4.0...v0.5.0) (2019-07-28)
+
+
+### Features
+
+* 🎸 automatic list all the contributors after every release ([2c152e5](https://github.com/rcmoutinho/ebook-with-asciidoctor/commit/2c152e5))
+* 🎸 enable changelog emojis ([51fc0d4](https://github.com/rcmoutinho/ebook-with-asciidoctor/commit/51fc0d4))
+* 🎸 new book files available ([33ff040](https://github.com/rcmoutinho/ebook-with-asciidoctor/commit/33ff040))
+
 # [0.4.0](https://github.com/rcmoutinho/ebook-with-asciidoctor/compare/v0.3.0...v0.4.0) (2019-07-28)
 
 
