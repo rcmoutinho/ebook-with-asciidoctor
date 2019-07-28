@@ -12,3 +12,6 @@ WORKDIR app
 VOLUME ["/app"]
 
 LABEL maintainer="twitter.com/rcmoutinho"
+
+ENTRYPOINT ["npm"]
+CMD ["--help"]
