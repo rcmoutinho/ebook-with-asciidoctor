@@ -19,18 +19,16 @@ services:
   
   npm-install:
     image: node:lts-alpine
-    user: node
-    working_dir: /home/node/app
+    working_dir: /usr/app
     volumes:
-      - .:/home/node/app
+      - .:/usr/app
     command: npm i
     network_mode: bridge
   
   semantic-release:
     image: node:lts-alpine
-    user: node
-    working_dir: /home/node/app
+    working_dir: /usr/app
     volumes:
-      - .:/home/node/app
+      - .:/usr/app
     command: npx semantic-release
     network_mode: bridge
