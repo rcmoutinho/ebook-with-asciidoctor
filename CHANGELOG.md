@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/rcmoutinho/ebook-with-asciidoctor/compare/v0.5.0...v0.6.0) (2019-07-28)
+
+
+### Features
+
+* **readme:** 🎸 add badges ([14e6059](https://github.com/rcmoutinho/ebook-with-asciidoctor/commit/14e6059))
+
 # [0.5.0](https://github.com/rcmoutinho/ebook-with-asciidoctor/compare/v0.4.0...v0.5.0) (2019-07-28)
 
 
