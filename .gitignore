@@ -1,5 +1,5 @@
-book-output
-book-release*
+dist
+asciidoctor.log
 
 ### OSX ###
 *.DS_Store
@@ -8,6 +8,10 @@ book-release*
 ### NODE.JS ###
 node_modules*
 npm-debug.log
+yarn.lock
 
 # ignores local travis config folder
 .travis
+
+### others ###
+.vscode
