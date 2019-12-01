@@ -33,13 +33,13 @@ jobs:
       - COMPOSE_FILE=docker-compose.yml
       script:
       - TRAVIS_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
-      - git shortlog -s | cut -f 2- > book/contributors.txt
+      - git shortlog -s | cut -f 2- > src/contributors.txt
       - docker-compose run --rm ebook $TRAVIS_TAG
       deploy:
         provider: releases
         api_key: "$GITHUB_TOKEN"
         file_glob: true
-        file: book-release/*
+        file: dist/*
         skip_cleanup: true
         on:
           branch: master
